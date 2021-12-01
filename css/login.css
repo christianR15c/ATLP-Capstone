@@ -80,8 +80,9 @@ body{
     border-radius: 15px;
     padding: 0 10px;
 }
-.form form input .button{
+.form form .button{
     background: #002c5c;
+    color: #fff;
 }
 .form form p{
     font-size: 25px;
