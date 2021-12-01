@@ -58,14 +58,6 @@ body{
     align-items: center;
     background-color: #fff;
 }
-/* .section .submit-form{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bac
-
-} */
 .section .contact-form .contact-form-fill{
     width: 60%;
     display: flex;
@@ -101,6 +93,14 @@ body{
     display: flex;
     width: 100%;
     justify-content: start;
+}
+.contact-form-fill button{
+    background-color: #002C5C;
+    height: 35px;
+    width: 30%;
+    margin-left: 70%;
+    color: #fff;
+    border-radius: 10px;
 }
 .section .submit-form .submit-msg{
     width: 60%;
