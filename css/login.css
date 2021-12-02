@@ -43,6 +43,14 @@ body{
     justify-content: center;
     align-items: center;
 }
+.nav a{
+    text-decoration: none;
+    color: #002C5C;
+}
+.nav a:hover{
+    color: #EF7B10;
+    font-size: 20px;
+}
 .login-page .login-form .nav ul{
     display: flex;
 } 
