@@ -23,6 +23,19 @@ body{
 .navbar #span{
     color: #EF7B10;
 }
+.navbar a{
+    text-decoration: none;
+    list-style: none;
+    color: #002C5C;
+}
+.navbar a:hover{
+    color: #EF7B10;
+    font-size: 20px;
+}
+.navbar #article-page{
+    color: #EF7B10;
+    font-size: 20px;
+}
 .navbar p{
     display: flex;
     align-items: center;

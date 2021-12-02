@@ -19,6 +19,18 @@ body{
     justify-content: space-between;
     padding:0 60px;
 }
+.nav a{
+    text-decoration: none;
+    color: #002C5C;
+}
+.nav a:hover{
+    color: #EF7B10;
+    font-size: 20px;
+}
+.nav #contact-page{
+    color: #EF7B10;
+    font-size: 20px;
+}
 .nav #span{
     color: #EF7B10;
 }

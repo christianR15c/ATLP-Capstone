@@ -45,6 +45,14 @@ body{
     align-items: center;
     font-size: 40px;
 }
+.navbar-content .nav a:hover{
+    color: #EF7B10;
+    font-size: 20px;
+}
+.navbar-content .nav #home-page{
+    color: #EF7B10;
+    font-size: 20px;
+}
 .navbar-content .nav ul{
     display: flex;
     align-items: center;
