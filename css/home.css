@@ -131,7 +131,6 @@ body{
 }
 .footer .adress .image{
     display: flex;
-    justify-content: space-between;
     background-color: white;
 }
 .footer .adress .email-address{
@@ -142,4 +141,98 @@ body{
 .footer .msg p{
     font-size: 28px;
     color: #002C5C;
+}
+
+#toggle-btn{
+    position: absolute;
+    top: .75rem;
+    right: 60px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 26px;
+}
+#toggle-btn .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+@media (max-width: 974px) {
+    
+    .navbar-content .nav a{
+        display: none;
+    }
+    .navbar-content .nav .login{
+        border: none;
+    }
+    .nav #toggle-btn{
+        display: flex;
+    }
+    .navbar-content .nav ul{
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+    }
+    .navbar-content .nav ul li{
+        padding-bottom: 10px;
+        font-size: 20px;
+    }
+    .navbar-content .nav.active{
+        display: flex;
+    }
+    .navbar-content .showcase{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 0 60px;
+    }
+    .navbar-content .showcase .showcase-image{
+        display: flex;
+        justify-content: center;
+        height: 50%;
+        width: 100%;
+    }
+    .navbar-content .showcase .showcase-image img{
+        width: 30%;
+    }
+    .navbar-content .showcase .showcase-text h1{
+        font-size: 36px;
+        align-self: center;
+        text-align: center;
+    }
+    .navbar-content .showcase .showcase-text p{
+        font-size: 18px;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .showcase .btn{
+        align-self: center;
+    }
+    .footer{
+        display: grid;
+        grid-template-rows: 20% 80%;
+    }
+    .footer h2{
+        padding-left: 0;
+        text-align: center;
+        font-size: 30px;
+    }
+    .footer .adress{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer p{
+        font-size: 18px;
+        text-align: center;
+        padding: 4px 0;
+    }
+    .footer .adress .image img{
+        height: 40px;
+        width: 42px;
+        /* padding: 0 10px; */
+    }
 }
