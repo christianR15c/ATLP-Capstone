@@ -233,6 +233,47 @@ body{
     .footer .adress .image img{
         height: 40px;
         width: 42px;
-        /* padding: 0 10px; */
+    }
+}
+@media (max-width: 560px) {
+    .navbar-content .nav p{
+        font-size: 30px;
+    }
+    .navbar-content .showcase .showcase-text h1{
+        font-size: 30px;
+    }
+    .showcase .btn{
+        font-size: 16px;
+        width:23%;
+        height: 30px;
+    }
+    .footer .adress .image img{
+        height: 37px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 440px) {
+    .navbar-content .nav p{
+        font-size: 28px;
+    }
+    .navbar-content .showcase .showcase-text h1{
+        font-size: 28px;
+    }
+    .showcase .btn{
+        width:32%;
+    }
+    .footer .adress .image img{
+        height: 30px;
+        width: 35px;
+    }
+    .footer .msg p{
+        font-size: 20px;
+    }
+    .footer h2{
+        font-size: 27px;
+    }
+    .footer .adress .email-address p{
+        font-size: 15px;
     }
 }
