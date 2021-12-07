@@ -38,7 +38,6 @@ body{
     height: 100%;
 }
 .login-page .login-form .nav{
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,5 +101,89 @@ body{
 .form form p span{
     color: #34C5CE;
 }
+#toggle-btn{
+    position: absolute;
+    top: 3.4rem;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 26px;
+}
+#toggle-btn .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
 
-
+@media (max-width: 974px) {
+    .login-page .login-text .paragraph{
+        font-size: 25px;
+    }
+    .form form p{
+        font-size: 20px;
+    }
+    .form form input{
+        width: 120%;
+    }
+}
+@media (max-width: 650px) {
+    .login-page{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .login-page .login-text{
+        height: 30%;
+        display: grid;
+        grid-template-columns: 30% 25% 25%;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .login-page .login-form{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .login-page .login-form .nav{
+        /* background-color: #002C5C; */
+    }
+    .login-page .login-form .nav ul{
+        height: fit-content;
+        flex-direction: column;
+        background-color: #002C5C;
+        width: 100%;
+        margin-top: 0;
+        align-items: center;
+        display: none;
+    }
+    .login-page .login-form .nav li a{
+        color: white;
+        padding-bottom: 10px;
+    }
+    .form form input{
+        width: 120%;
+        height: 7%;
+    }
+    .form form{
+        height: 100%;
+    }
+    .login-page .login-text img{
+        width: 60%;
+    }
+    .login-page .login-text .paragraph{
+        font-size: 18px;
+    }
+}
+@media (max-width: 470px) {
+    .form form input{
+        width: 160%;
+    }
+}
+@media (max-width: 360px) {
+    .login-page .login-text .paragraph{
+        font-size: 15px;
+    }
+}

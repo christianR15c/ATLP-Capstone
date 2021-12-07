@@ -236,6 +236,9 @@ body{
     }
 }
 @media (max-width: 560px) {
+    body{
+        min-height: max-content;
+    }
     .navbar-content .nav p{
         font-size: 30px;
     }
