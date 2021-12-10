@@ -98,6 +98,15 @@ body{
     padding-top: 20px;
     color: #002C5C;
 }
+.email{
+    color: red;
+}
+.password{
+    color: red;
+}
+.hidden{
+    display: none;
+}
 .form form p span{
     color: #34C5CE;
 }
