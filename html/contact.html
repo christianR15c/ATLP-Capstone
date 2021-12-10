@@ -23,14 +23,22 @@
         </div>
         <div class="section">
             <div class="contact-form">
-                <form action="" class="contact-form-fill">
+                <form action="submit" class="contact-form-fill">
                     <h2>We are happy to hear from you</h2>
                     <div class="name-email">
-                        <input type="text" placeholder="name">
-                        <input type="email" placeholder="email">
+                        <label for="">name</label>
+                        <input name="name"/>
+                        <div class="name name-hidden">your name is required</div>
+                        <label for="">email</label>
+                        <input type="email"/>
+                        <div class="email email-hidden">please enter a valid email</div>
                     </div>
-                    <div class="message"><input type="text" placeholder="message"></div>
-                    <button type="submit">submit</button>
+                    <div class="message">
+                        <label for="">message</label>
+                        <input name="message">
+                        <div class="messages message-hidden">please enter your message or question</div>
+                    </div>
+                        <button type="submit">submit</button>
                 </form>
             </div>
             <div class="submit-form">
@@ -42,5 +50,6 @@
             </div>
         </div>
     </div>
+    <script src="../js/contact.js"></script>
 </body>
 </html>
