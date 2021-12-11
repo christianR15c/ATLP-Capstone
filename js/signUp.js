@@ -1,22 +1,37 @@
+const button = document.querySelector('input[type="button"]');
+const passwordInput = document.querySelector('input[type="password"]');
+const nameInput = document.querySelector('input[type="text"]');
+const emailInput = document.querySelector('input[type="email"]');
+const repeatPasswordInput = document.getElementsByClassName('passRepeat')
 
-const button = document.querySelector('input[type="button"]')
-const emailInput = document.querySelector('input[type="email]');
-const password = document.querySelector('input[type="password"]');
-const repeatPassword = document.querySelector('input[placeholder="repeat password"')
+const validateName = () => {
+    if(!nameInput.value){
+        nameInput.nextElementSibling.classList.remove('hidden');
+    }
+}
 
 const validateEmail = () => {
-    if(!emailInput.value.includes('@')){
-        emailInput.nextElementSibling.classList.remove('email-hidden');
+    if(!emailInput.value){
+        emailInput.nextElementSibling.classList.remove('hidden');
     }
 }
 
 const validatePassword = () => {
-    if(!password.value){
-        password.nextElementSibling.classList.remove('hidden');
+    if(!passwordInput.value){
+        passwordInput.nextElementSibling.classList.remove('hidden');
     }
 }
+
+const validateRepeatPassword = () => {
+    if(!repeatPasswordInput){
+        repeatPasswordInput.nextElementSibling.classList.remove('hidden');
+    }
+}
+
 button.addEventListener('click', (e) => {
     e.preventDefault();
     validateEmail();
     validatePassword();
+    validateRepeatPassword();
+    validateName();
 })

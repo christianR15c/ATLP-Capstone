@@ -101,6 +101,13 @@ body{
 .form form p span{
     color: #34C5CE;
 }
+.email, .password, .name{
+    color: red;
+    font-size: 15px;
+}
+.hidden{
+    display: none;
+}
 #toggle-btn{
     position: absolute;
     top: 2.4rem;
