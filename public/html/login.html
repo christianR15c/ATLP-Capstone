@@ -14,25 +14,34 @@
                 <img src="../images/comp-icon.png" alt="">
             </div>
             <div class="paragraph"><p>Let Technology lead, the future is now </p></div>
+            <a href="#" id="toggle-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
         </div>
         <div class="login-form">
             <div class="nav">
                 <ul>
-                    <li>Home</li>
-                    <li>Article</li>
-                    <li>Contact Us</li>
+                    <li><a href="/html/home.html">Home</a></li>
+                    <li><a href="/html/article.html">Article</a></li>
+                    <li><a href="/html/contact.html">Contact Us</a></li>
+                    <li><a href="#">Services</a></li>
                 </ul>
             </div>
             <div class="form">
                 <form>
                     <h1>login</h1>
                     <input type="text" placeholder="username or email">
+                    <div class="email hidden">please enter the valid email</div>
                     <input type="password" placeholder="password">
-                    <input type="button" value="submit" class="button">
+                    <div class="password hidden">please enter the password</div>
+                    <input type="button" value="login" class="button">
                     <p>You don't have account? <span><u>Sign Up</u></span></p>
                 </form>
             </div>
         </div>
     </div>
+    <script src="../js/login.js"></script>
 </body>
 </html>
