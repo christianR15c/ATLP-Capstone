@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+.container{
+    height: 100%;
+}
+.nav{
+    width: 100%;
+    height: 10%;
+    background-color: #fff;
+    display: flex;
+    color: #002C5C;
+    justify-content: space-between;
+    padding:0 60px;
+}
+.nav a{
+    text-decoration: none;
+    color: #002C5C;
+}
+.nav a:hover{
+    color: #EF7B10;
+    font-size: 20px;
+}
+.nav #contact-page{
+    color: #EF7B10;
+    font-size: 20px;
+}
+.nav #span{
+    color: #EF7B10;
+}
+.nav p{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color: #34C5CE;
+}
+.nav ul{
+    display: flex;
+    align-items: center;
+}
+.nav ul li{
+    display: flex;
+    padding: 0 20px;
+}
+.msg-body{
+    height: 28%;
+    width: 100%;
+    background-color: #002C5C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.section{
+    height: 62%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+.section .contact-form,.submit-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.section .contact-form .contact-form-fill{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #fff;
+    border: solid 3px #002C5C;
+    border-radius: 15px;
+    padding: 20px;
+    justify-content:space-around;
+    margin-bottom: 10%;
+}
+.section .contact-form .contact-form-fill h2{
+    align-self: center;
+    color: #002C5C;
+}
+.section .contact-form .contact-form-fill .button{
+    color: #EF7B10;
+}
+.section .contact-form .contact-form-fill .name-email{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.section .contact-form .contact-form-fill .name-email input{
+    width: 100%;
+    border:none;
+    padding-top: 10px;
+    border-bottom: 2px solid #002C5C;
+}
+.section .contact-form .contact-form-fill .name-email label{
+    padding-top: 10px;
+}
+.section .contact-form .contact-form-fill .message input{
+    height: 200px;
+    width: 100%;
+}
+.contact-form-fill button{
+    background-color: #002C5C;
+    height: 34px;
+    width: 30%;
+    margin-left: 70%;
+    color: #fff;
+    border-radius: 10px;
+}
+.section .submit-form .submit-msg{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #fff;
+    border: solid 3px #002C5C;
+    border-radius: 15px;
+    padding: 20px;
+    justify-content:space-around;
+    margin-bottom: 16%;
+}
+.section .submit-form h1,h2{
+    align-self: center;
+    color: #002C5C;
+}
+.name, .email, .messages{
+    color: red;
+}
+.name-hidden, .email-hidden, .message-hidden{
+    display: none;
+}
