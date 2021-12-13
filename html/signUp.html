@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +31,11 @@
                     <div class="name hidden">name is required</div>
                     <input type="email" placeholder="email">
                     <div class="email hidden">please eneter the valid email</div>
+                    
                     <input type="password" placeholder="password">
-                    <div class="password hidden">Please the valid password</div>
+                    <div class="password hidden">Please enter the password</div>
+                    <div class="password hidden-length" id="hidden-length">Password must be atleast 8 characters</div>
+                    <div class="password hidden-length" id="hidden-uppercase">Password must have atleat one uppercase</div>
                     <input type="button" value="Sign Up" class="button">
                     <p>Already have account? <span><u>Sign In</u></span></p>
                 </form>
@@ -45,6 +49,12 @@
         </div>
         
     </div>
-    <script src="../js/signUp.js"></script>
+    <!-- <script src="https:www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https:www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https:www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https:www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script> -->
+    <!-- <script  src="../js/firebase.js"></script> -->
+    <script  src="../js/signUp.js"></script>
+    
 </body>
 </html>

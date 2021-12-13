@@ -53,7 +53,7 @@ body{
 }
 .content{
     display: grid;
-    grid-template-columns: 49% 49%;
+    grid-template-columns: 59% 39%;
     gap: 2%;
 }
 .article{
@@ -134,4 +134,20 @@ body{
 a{
     text-decoration: none;
     color: inherit;
+}
+hr{
+    /* padding: 10px 0; */
+    margin: 22px 0;
+}
+.queries{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.queries p{
+    padding: 5px 0;
+    font-size: 20px;
+}
+.queries #email{
+    color: #34acb4;
 }
