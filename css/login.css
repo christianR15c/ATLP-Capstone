@@ -46,6 +46,10 @@ body{
     text-decoration: none;
     color: #002C5C;
 }
+.form a{
+    text-decoration: none;
+    color: #34C5CE;
+}
 .nav a:hover{
     color: #EF7B10;
     font-size: 20px;

@@ -2,8 +2,10 @@ const button = document.querySelector('input[type="button"]');
 const nameInput = document.querySelector('input[name="name"]');
 const emailInput = document.querySelector('input[type="email"]')
 const passswordInput = document.querySelector('input[type="password"]');
-const passwordLength = document.querySelector('div[id="hidden-length"]');
-const passwordUpperCase = document.querySelector('div[id="hidden-uppercase"]');
+const emailValidation = document.querySelector('div[id="hidden-email"]');
+const passwordValidation = document.querySelector('div[id="hidden-password"]')
+// const passwordNumber = document.querySelector('div[id="hidden-number"]');
+
 
 const validateName = () => {
     if(!nameInput.value){
@@ -18,14 +20,16 @@ const validateEmail = () => {
 }
 
 const validatePassword = () => {
+    const regexEmail = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    const regexPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,})");
     if(!passswordInput.value){
         passswordInput.nextElementSibling.classList.remove('hidden');
     }
-    else if(passswordInput.value.length < 8){
-        passwordLength.removeAttribute('id');
+    else if(regexEmail.test(passswordInput.value)){
+        emailValidation.removeAttribute('id');
     }
-    else if(!passswordInput.value.includes('[A-Z]')){
-        passwordUpperCase.removeAttribute('id');
+    else if(regexPassword.test(passswordInput.value)){
+        passwordValidation.removeAttribute('id');
     }
 }
 
@@ -34,4 +38,5 @@ button.addEventListener('click', (e) => {
     validateName();
     validateEmail();
     validatePassword();
+    signUpAuth();
 })

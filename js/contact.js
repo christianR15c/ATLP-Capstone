@@ -26,4 +26,6 @@ button.addEventListener('click', (e) => {
     validateInput();
     validateEmail();
     validateMessage();
+    createQuery(nameInput.value, emailInput.value, messageInput.value);
+    button.reset();
 })
