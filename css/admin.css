@@ -88,6 +88,10 @@ body{
     height: 90px;
     width: 90%;
 }
+.article-section{
+    display: flex;
+    flex-direction: column;
+}
 .article form button{
     background-color: #002C5C;
     height: 30px;
@@ -96,7 +100,7 @@ body{
     color: #fff;
     border-radius: 10px;
 }
-.article-section{
+#article-selectio-first-div{
     display: grid;
     grid-template-columns: 20% 80%;
 }
@@ -236,4 +240,13 @@ hr{
 .bg-active1{
     visibility: visible;
     opacity: 1;
+}
+#delete{
+    font-size: 15px;
+}
+.title-input, .article-input{
+    color: red;
+}
+.hidden{
+    display: none;
 }

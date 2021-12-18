@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/admin.css">
     <title>admin page</title>
 </head>
-<body onload="readArticle()">
+<body onload="readArticle(); readQuery();">
     <div class="container">
         <div class="navbar">
             <p><span id="span">chris</span>Code<span id="span">/></span></p>
@@ -29,9 +29,12 @@
                 <form id="create-article-form">
                     <h3>Add Article</h3>
                     <input type="text" placeholder="Ttle" class="title" id="title">
+                    <p class="title-input hidden">please enter the title</p>
                     <input type="text" placeholder="content" class="body" id="article">
+                    <p class="article-input hidden">please enter the article content</p>
                     <div class="image-div"><img src="../images/choose image.png" alt="" id="photo"></div>
                     <input type="file" id="file">
+                    <label id="imageName"></label>
                     <label id="uploadBtn">uplaod image</label>
                     <label id="UpProgress"></label>
                     <button type="submit">Add Article</button>
@@ -41,37 +44,13 @@
                 <!-- </div>   -->
             </div>
             <div class="queries" id="queries">
-                <h2>christian Habineza</h2>
-                <p id="email">habinezac15@gmail.com</p>
-                <p>i would like to ask if it is possible to meet in weekend</p>
-                <hr>
-                <h2>Alvin Manzi</h2>
-                <p id="email">alvinmmanzi@gmail.com</p>
-                <p>i would like to ask if there is any way we can meet up and discuss about business</p>
-                <hr>
-                <h2>John</h2>
-                <p id="email">habinezac15@gmail.com</p>
-                <p>i would like to ask if it is possible to meet in weekend</p>
-                <hr>
-                <h2>Pacifique </h2>
-                <p id="email">habinezac15@gmail.com</p>
-                <p>i would like to ask if it is possible to meet in weekend</p>
+
             </div>
         </div>
     </div>
 
     <div class="modal-bg" id="modal-bg">
-        <div class="modal">
-            <h2>Edit your Article</h2>
-            <label for="name" >Title</label>
-            <input type="text" name="title" value="article title" id="title">
-            <label for="name">Article</label>
-            <input type="text" name="message" value="article content" id="article">
-            <div class="button">
-                <button id="updatBtn">Update</button>
-                <button id="cancel">Cancel</button>
-            </div>
-        </div>
+        
     </div>
 
     <div class="modal-bg1" id="modal-bg1">
@@ -90,6 +69,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="../js/firebase.js"></script>
     <script src="../js/admin.js"></script>
 </body>

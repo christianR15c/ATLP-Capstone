@@ -27,5 +27,5 @@ button.addEventListener('click', (e) => {
     validateEmail();
     validateMessage();
     createQuery(nameInput.value, emailInput.value, messageInput.value);
-    button.reset();
+    document.getElementById('contactForm').reset();
 })

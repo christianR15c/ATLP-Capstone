@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/singUp.css">
     <title>Sign Up</title>
 </head>
-<body>
+<body onload="resetForm()">
     <div class="login-page">
         <div class="login-form">
             <div class="nav">
@@ -25,7 +25,7 @@
                 <span class="bar"></span>
             </a>
             <div class="form">
-                <form>
+                <form id="form">
                     <h1>Sign Up</h1>
                     <input type="text" name="name" placeholder="names">
                     <div class="name hidden">name is required</div>

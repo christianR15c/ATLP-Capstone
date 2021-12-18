@@ -40,3 +40,7 @@ button.addEventListener('click', (e) => {
     validatePassword();
     signUpAuth();
 })
+
+function resetForm() {
+    document.getElementById('form').reset();
+}

@@ -12,58 +12,98 @@ const firebaseConfig = {
   let theTime = theDate.getTime();
   let counter = theTime;
 
-    function createArticle(title, articleContent, imgURL) {
-      counter+=1;
-      let articles = {
-          id: counter,
-          title: title,
-          article: articleContent,
-        //   image: imgURL
-      }
 
-    //   let uploadImage = firebase.storage().ref('Images'+counter).put(files[0]);
-    //   uploadImage.on('state_changed', (snapshot) => {
-    //       let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    //       document.getElementById('UpProgress').innerHTML = `upload is on ${progress} %`;
-    //   })
+/* -------------- uploading image to the storage -------------*/
 
-      firebase.database().ref('articles/'+counter).set(articles);
-      readArticle();
-      swal("Good job!", "Article successfully added", "success");
-  }
+let files = [];
+let reader = new FileReader();
+let imgURL;
 
-  function readArticle() {
-      let article = firebase.database().ref('articles/');
-      article.on('child_added', (data) => {
-        let articleData = data.val();
-        document.getElementById('article-section').innerHTML+=`
-            <div class="picture">
-                <img src="../images/coding1.jpg" alt="">
-            </div>
-            <div class="content" id="content">
-                <h1><a href="./displayArticle.html">${articleData.title}</a> </h1>
-                <p>${articleData.article}</p>
-                <div class="like-comment">
-                    <img src="../images/like-icon.png" alt="">
-                    <p>6</p>
-                    <img src="../images/comment-icon.png" alt="">
-                    <p>7</p>
-                    <p>${articleData.date}</p>
-                    <p>${articleData.time}</p>
-                    <p class="edit" id="edit" onclick="openEditModal(); ">Edit</p>
-                    <p class="delete" id="delete" onclick="deleteArticle();">delete</p>
-                </div>
-            </div>
-        `
+let myimg = document.getElementById('photo');
+let proglab = document.getElementById('UpProgress');
+let upBtn = document.getElementById('uploadBtn');
+let selectedImage = document.querySelector('#file');
+
+selectedImage.addEventListener('change', (e) => {
+    files = e.target.files;
+
+    let extension;
+    let name;
+
+    extension = GetFileExtension(files[0]);
+    name = GetFileName(files[0]);
+
+    reader.readAsDataURL(files[0]);
+    document.getElementById('imageName').innerHTML=`<label id="myImageName">${name}${extension}</label>`;
+})
+
+reader.onload = function() {
+    myimg.src = reader.result;
+}
+
+function GetFileExtension(file) {
+    let temp = file.name.split('.');
+    let ext = temp.slice((temp.length-1),(temp.length));
+    return '.'+ext[0];
+}
+
+function GetFileName(file) {
+    let temp = file.name.split('.');
+    let fname = temp.slice(0,temp.length-1).join('.');
+    return fname;
+}
+
+function UploadProcess() {
+    let ImgToUpload = files[0];
+    let ImgName = document.getElementById('myImageName').textContent;
+    const storage = firebase.storage();
+    const storageRef = storage.ref();
+    const UploadTask = storageRef.child('Images/'+ImgName).put(ImgToUpload);
+    UploadTask.on('state_changed', (snapshot) => {
+        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        proglab.innerHTML = `uplaod is on ${progress} %`;
+        if (progress === 100) {
+            
+        }
+    },
+    (error) => {
+        alert('error: image not uploaded')
+    },
+    () => {
+        storageRef.child('Images/'+ImgName).getDownloadURL().then((downloadURL) => {
+            imgURL = downloadURL;
         })
     }
-
-function openEditModal() {
-    document.getElementById('modal-bg').classList.add('bg-active');
-    document.getElementById('cancel').addEventListener('click', ()=>{
-        document.getElementById('modal-bg').classList.remove('bg-active');
-    })
+    );
 }
+document.getElementById('uploadBtn').addEventListener('click', UploadProcess);
+
+
+/* ---------- Adding articles to firebase ------------- */
+
+function createArticle(title, articleContent, today, time, image = imgURL) {
+    counter+=1;
+    let articles = {
+    id: counter,
+    title: title,
+    article: articleContent,
+    image: image,
+    date: today,
+    time: time
+    }
+
+
+    firebase.database().ref('articles/'+counter).set(articles);
+    // readArticle();
+    // document.getElementById('article-section').innerHTML = '';
+    swal("Good job!", "Article successfully added", "success");
+    document.getElementById('UpProgress').innerHTML = '';
+    document.getElementById('imageName').innerHTML = '';
+    document.getElementById('photo').src = '../images/choose image.png';
+    document.getElementById('article-section').innerHTML = ''
+    readArticle();
+}   
+
 
 function deleteArticle() {
     document.getElementById('modal-bg1').classList.add('bg-active1');
@@ -79,13 +119,18 @@ function deleteArticle() {
         })
         let article = firebase.database().ref('articles/'+articleData.id);
         article.remove();
+        let desertRef = firebase.storage().ref().child('images/'+articleData.image);
+        desertRef.delete();
+
+
         // reset();
         document.getElementById('article-section').innerHTML = '';
-        readArticle();
         swal("Good job!", "Article successfully Deleted", "success");
+        readArticle();
         })
     
 }
+
 
 function updateArticle(id, title, article) {
     document.getElementById('article-form').innerHTML = `
@@ -103,32 +148,51 @@ function updateArticle(id, title, article) {
     `;
 }
 
-/* ------------------------- contact -------------------- */
+/* --------------- Updating an article -------------------- */
+function updateArticle() {
+    
+}
 
-function createQuery(name, email, message) {
+/* -------------------------adding queries to database -------------------- */
+
+function createQuery(name, userEmail, message) {
     counter += 1;
     let messages = {
         id: counter,
         name: name,
-        email: email,
+        email: userEmail,
         message: message
     }
     firebase.database().ref('messages/'+counter).set(messages);
     swal("Thank you for your concer!", "Message has sent successfuly", "success");
-    document.getElementById('queries').innerHTML = '';
 }
 
-/* ------------ Authentication -------------------- */
-// const auth = firebase.auth();
+/* ------------- delete a query ------------ */
+function deleteQuery() {
+    let MessageData;
+    let messages = firebase.database().ref('messages/');
+    messages.on('child_added', (data) => {
+        MessageData = data.val();
+    })
+    let message = firebase.database().ref('messages/'+MessageData.id);
+    message.remove();
+    document.getElementById('queries').innerHTML = '';
+    swal("Good job!", "message successfully Deleted", "success");
+    readQuery();
+}
+
+/* ------------ Sign Up Authentication -------------------- */
+
 function signUpAuth() {
     let email = document.getElementById('input-email');
     let password = document.getElementById('input-password');
-    alert(email.value)
+    resetForm();
 
     firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
   .then((userCredential) => {
     // Signed in 
     let user = userCredential.user;
+    swal("Well Done !", "sign up was done successfuly", "success");
     // ...
   })
   .catch((error) => {
@@ -137,3 +201,8 @@ function signUpAuth() {
     // ..
   });
 }
+
+
+
+
+
