@@ -13,10 +13,10 @@ addArticleButton.addEventListener('submit', (e) => {
         let h=date.getHours();  
         let m=date.getMinutes();  
         let thedate = `${day}/${month}/${year}`; 
-        let thetime = `${h}:${m}`
-        // console.log(thedate);
+        let thetime = `${h}:${m}`;
+        let image = imgURL;
         // console.log(imgURL);
-        createArticle(title, article, thedate, thetime, imgURL);
+        createArticle(title, article, thedate, thetime, image);
         addArticleButton.reset();
     }
     else if(!title){
@@ -37,7 +37,6 @@ function readArticle() {
     let article = firebase.database().ref('articles/');
     article.on('child_added', (data) => {
       let articleData = data.val();
-      let like;
       document.getElementById('article-section').innerHTML+=`
         <div id="article-selectio-first-div">
             <div class="picture">
@@ -47,14 +46,14 @@ function readArticle() {
                 <h1><a href="./displayArticle.html">${articleData.title}</a> </h1>
                 <p>${articleData.article}</p>
                 <div class="like-comment">
-                    <img src="../images/like-icon.png" alt="">
-                    <p id="like" onclick="likeFunction()">${like}</p>
+                    <img src="../images/like-icon.png" alt="" onclick="likeFunction('${articleData.title}','${articleData.article}','${articleData.date}','${articleData.time}','${articleData.image}','${articleData.id}','${articleData.like}')">
+                    <p id="like">${articleData.like}</p>
                     <img src="../images/comment-icon.png" alt="">
                     <p>7</p>
                     <p>${articleData.date}</p>
                     <p>${articleData.time}</p>
                     <p class="edit" id="edit" onclick="openModal('${articleData.title}','${articleData.article}','${articleData.date}','${articleData.time}','${articleData.image}','${articleData.id}'); ">Edit</p>
-                    <p class="delete" id="delete" onclick="deleteArticle();">delete</p>
+                    <p class="delete" id="delete" onclick="deleteArticle('${articleData.id}','${articleData.imageName}');">delete</p>
                 </div>
             </div>
         </div>
@@ -62,6 +61,16 @@ function readArticle() {
       `
       })
   }
+
+/* ----------- like function ---------- */
+function likeFunction(title, articleContent, today, time, image, id, like){
+      console.log(like);
+      let liked = Number(like) + 1;
+      updateArticle(title, articleContent, today, time, image, id, liked);
+      document.getElementById('article-section').innerHTML = '';
+      readArticle();
+}
+
 
 /* -------------- edit modal ------------- */
 
@@ -95,14 +104,15 @@ function openModal(title, articleContent, today, time, image, id) {
         e.preventDefault();
     })
 }
-function updateArticle(title, articleContent, today, time, image, id) {
+function updateArticle(title, articleContent, today, time, image, id, like) {
     let articleUpdated = {
         id: id,
         title: title,
         article: articleContent,
         image: image,
         date: today,
-        time: time
+        time: time,
+        like: like
     }
     let db = firebase.database().ref('articles/'+id);
     db.update(articleUpdated);

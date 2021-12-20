@@ -18,6 +18,7 @@ const firebaseConfig = {
 let files = [];
 let reader = new FileReader();
 let imgURL;
+let imageName;
 
 let myimg = document.getElementById('photo');
 let proglab = document.getElementById('UpProgress');
@@ -35,6 +36,7 @@ selectedImage.addEventListener('change', (e) => {
 
     reader.readAsDataURL(files[0]);
     document.getElementById('imageName').innerHTML=`<label id="myImageName">${name}${extension}</label>`;
+    imageName = `${name}${extension}`;
 })
 
 reader.onload = function() {
@@ -50,12 +52,14 @@ function GetFileExtension(file) {
 function GetFileName(file) {
     let temp = file.name.split('.');
     let fname = temp.slice(0,temp.length-1).join('.');
+    // imageName=fname;
     return fname;
 }
 
 function UploadProcess() {
     let ImgToUpload = files[0];
     let ImgName = document.getElementById('myImageName').textContent;
+    console.log(ImgName);
     const storage = firebase.storage();
     const storageRef = storage.ref();
     const UploadTask = storageRef.child('Images/'+ImgName).put(ImgToUpload);
@@ -79,9 +83,10 @@ function UploadProcess() {
 document.getElementById('uploadBtn').addEventListener('click', UploadProcess);
 
 
+
 /* ---------- Adding articles to firebase ------------- */
 
-function createArticle(title, articleContent, today, time, image = imgURL) {
+function createArticle(title, articleContent, today, time, image, imageNam=imageName, like = 0) {
     counter+=1;
     let articles = {
     id: counter,
@@ -89,37 +94,30 @@ function createArticle(title, articleContent, today, time, image = imgURL) {
     article: articleContent,
     image: image,
     date: today,
-    time: time
+    time: time,
+    imageName: imageNam,
+    like: like
     }
 
 
     firebase.database().ref('articles/'+counter).set(articles);
-    // readArticle();
-    // document.getElementById('article-section').innerHTML = '';
     swal("Good job!", "Article successfully added", "success");
     document.getElementById('UpProgress').innerHTML = '';
     document.getElementById('imageName').innerHTML = '';
     document.getElementById('photo').src = '../images/choose image.png';
-    document.getElementById('article-section').innerHTML = ''
-    readArticle();
 }   
 
 
-function deleteArticle() {
+function deleteArticle(id, imageName) {
     document.getElementById('modal-bg1').classList.add('bg-active1');
     document.getElementById('cancel1').addEventListener('click', ()=>{
         document.getElementById('modal-bg1').classList.remove('bg-active1');
     });
     document.getElementById('delete1').addEventListener('click', () => {
         document.getElementById('modal-bg1').classList.remove('bg-active1');
-        let articleData;
-        let articles = firebase.database().ref('articles/');
-        articles.on('child_added', (data) => {
-            articleData = data.val();
-        })
-        let article = firebase.database().ref('articles/'+articleData.id);
+        let article = firebase.database().ref('articles/'+id);
         article.remove();
-        let desertRef = firebase.storage().ref().child('images/'+articleData.image);
+        let desertRef = firebase.storage().ref().child('Images/'+imageName);
         desertRef.delete();
 
 
@@ -128,28 +126,6 @@ function deleteArticle() {
         swal("Good job!", "Article successfully Deleted", "success");
         readArticle();
         })
-    
-}
-
-
-function updateArticle(id, title, article) {
-    document.getElementById('article-form').innerHTML = `
-    <form id="create-article-form">
-        <h3>Add Article</h3>
-        <input type="text" placeholder="Ttle" class="title" id="title">
-        <input type="text" placeholder="content" class="body" id="article">
-        <div class="image-div"><img src="../images/choose image.png" alt="" id="photo"></div>
-        <input type="file" id="file">
-        <label id="uploadBtn">uplaod image</label>
-        <label id="UpProgress"></label>
-        <button type="submit">Add Article</button>
-    </form>
-
-    `;
-}
-
-/* --------------- Updating an article -------------------- */
-function updateArticle() {
     
 }
 
