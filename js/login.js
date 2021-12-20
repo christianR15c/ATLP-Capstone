@@ -18,4 +18,9 @@ button.addEventListener('click', (e) => {
     e.preventDefault();
     validateEmail();
     validatePassword();
+    resetForm();
 });
+
+function resetForm() {
+    document.getElementById("form").reset();
+}
