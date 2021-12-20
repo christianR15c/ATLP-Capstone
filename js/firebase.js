@@ -105,6 +105,7 @@ function createArticle(title, articleContent, today, time, image, imageNam=image
     document.getElementById('UpProgress').innerHTML = '';
     document.getElementById('imageName').innerHTML = '';
     document.getElementById('photo').src = '../images/choose image.png';
+    displayingArticles();
 }   
 
 

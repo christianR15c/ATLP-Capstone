@@ -13,7 +13,7 @@ function displayingArticles() {
     let article = firebase.database().ref('articles/');
     article.on('child_added', (data) => {
         let articleData = data.val();
-        document.getElementById('article').innerHTML = `
+        document.getElementById('article').innerHTML += `
             <div class="article-1">
                 <div class="picture">
                     <img src="${articleData.image}" alt="">
