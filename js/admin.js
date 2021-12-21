@@ -94,7 +94,7 @@ function openModal(title, articleContent, today, time, image, id) {
         e.preventDefault();
         let newTitle = document.querySelector('input[name="title"]').value;
         let newArticle = document.querySelector('input[name="message"]').value;
-        updateArticle(newTitle, newArticle, today, time, image, id);
+        updateArticle(newTitle, newArticle, today, time, image, id, like);
         document.getElementById('article-section').innerHTML = '';
         readArticle();
         document.getElementById('modal-bg').classList.remove('bg-active');
