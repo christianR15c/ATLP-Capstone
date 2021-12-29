@@ -102,6 +102,8 @@ function createArticle(title, articleContent, today, time, image, imageNam=image
 
     firebase.database().ref('articles/'+counter).set(articles);
     swal("Good job!", "Article successfully added", "success");
+    document.getElementById('title').value = 'Title';
+    document.getElementById('article').value = 'Content';
     document.getElementById('UpProgress').innerHTML = '';
     document.getElementById('imageName').innerHTML = '';
     document.getElementById('photo').src = '../images/choose image.png';
