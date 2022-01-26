@@ -1,60 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/admin.css" />
     <title>admin page</title>
-</head>
-<body>
+  </head>
+  <body onload="readArticle(); readQuery();">
     <div class="container">
-        <div class="navbar">
-            <p><span id="span">chris</span>Code<span id="span">/></span></p>
-            <ul>
-                <li><a href="../html/index.html">Home</a></li>
-                <li><a href="../html/article.html" id="article-page">Articles</a></li>
-                <li><a href="../html/contact.html">Contact Us</a></li>
-                <li><a href="#">Services</a></li>
-                <img src="../images/Passport Photo.jpg" alt="">
-            </ul>
-        </div>
-        <a href="#" id="toggle-btn">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-        <div class="content">
-            <div class="article">
-                <form action="">
-                    <h3>Add Article</h3>
-                    <input type="text" placeholder="Ttle" class="title">
-                    <input type="text" placeholder="content" class="body">
-                    <button>Add Article</button>
-                </form>
-                <div class="picture">
-                    <img src="../images/coding1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h1><a href="./displayArticle.html">Coding is the future, Why coding?</a> </h1>
-                    <p>Coding is a basic literacy in the digital age, and kids need to understand and work with and understand the technology around them. Having children learn coding at a young age prepares them for the future. Coding helps children with communication, creativity, math, writing, and confidence.</p>
-                    <div class="like-comment">
-                        <img src="../images/like-icon.png" alt="">
-                        <p>6</p>
-                        <img src="../images/comment-icon.png" alt="">
-                        <p>7</p>
-                        <p>December 2, 2021</p>
-                        <p class="edit">Edit</p>
-                        <p class="delete">delete</p>
-                    </div>
-                </div>
-                <!-- </div>   -->
+      <div class="navbar">
+        <p><span id="span">chris</span>Code<span id="span">/></span></p>
+        <ul>
+          <li><a href="../html/index.html">Home</a></li>
+          <li><a href="../html/article.html" id="article-page">Articles</a></li>
+          <li><a href="../html/contact.html">Contact Us</a></li>
+          <li><a href="#">Services</a></li>
+          <img src="../images/Passport Photo.jpg" alt="" />
+        </ul>
+      </div>
+      <a href="#" id="toggle-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="content">
+        <div class="article" id="article-form">
+          <form id="create-article-form">
+            <h3>Add Article</h3>
+            <input type="text" placeholder="Ttle" class="title" id="title" />
+            <p class="title-input hidden">please enter the title</p>
+            <input
+              type="text"
+              placeholder="content"
+              class="body"
+              id="article"
+            />
+            <p class="article-input hidden">please enter the article content</p>
+            <div class="image-div">
+              <img src="../images/choose image.png" alt="" id="photo" />
             </div>
-            <div class="queries">
-                <h2>name</h2>
-                <p>question</p>
-            </div>
+            <input type="file" id="file" />
+            <label id="imageName"></label>
+            <label id="uploadBtn">uplaod image</label>
+            <label id="UpProgress"></label>
+            <button type="submit">Add Article</button>
+          </form>
+          <div class="article-section" id="article-section"></div>
+          <!-- </div>   -->
         </div>
+        <div class="queries" id="queries"></div>
+      </div>
     </div>
-</body>
+
+    <div class="modal-bg" id="modal-bg"></div>
+
+    <div class="modal-bg1" id="modal-bg1">
+      <div class="modal">
+        <h2 id="delete-article-header">Delete Article</h2>
+        <p>are you sure you want to delete this article?</p>
+        <div class="button">
+          <button id="delete1">delete</button>
+          <button id="cancel1">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
 </html>

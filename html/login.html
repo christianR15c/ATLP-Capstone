@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css" />
     <title>login</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="login-page">
-        <div class="login-text">
-            <div class="image">
-                <img src="../images/comp-icon.png" alt="">
-            </div>
-            <div class="paragraph"><p>Let Technology lead, the future is now </p></div>
-            <a href="#" id="toggle-btn">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
+      <div class="login-text">
+        <div class="image">
+          <img src="../images/comp-icon.png" alt="" />
         </div>
-        <div class="login-form">
-            <div class="nav">
-                <ul>
-                    <li><a href="/html/home.html">Home</a></li>
-                    <li><a href="/html/article.html">Article</a></li>
-                    <li><a href="/html/contact.html">Contact Us</a></li>
-                    <li><a href="#">Services</a></li>
-                </ul>
-            </div>
-            <div class="form">
-                <form>
-                    <h1>login</h1>
-                    <input type="text" placeholder="username or email">
-                    <div class="email hidden">please enter the valid email</div>
-                    <input type="password" placeholder="password">
-                    <div class="password hidden">please enter the password</div>
-                    <input type="button" value="login" class="button">
-                    <p>You don't have account? <span><u>Sign Up</u></span></p>
-                </form>
-            </div>
+        <div class="paragraph">
+          <p>Let Technology lead, the future is now</p>
         </div>
+        <a href="#" id="toggle-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      </div>
+      <div class="login-form">
+        <div class="nav">
+          <ul>
+            <li><a href="/html/index.html">Home</a></li>
+            <li><a href="/html/article.html">Article</a></li>
+            <li><a href="/html/contact.html">Contact Us</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+        </div>
+        <div class="form">
+          <form>
+            <h1>login</h1>
+            <input type="text" placeholder="username or email" />
+            <div class="email hidden">please enter the valid email</div>
+            <input type="password" placeholder="password" />
+            <div class="password hidden">please enter the password</div>
+            <input type="button" value="login" class="button" />
+            <p>
+              You don't have account?
+              <span><a href="signUp.html">Sign Up</a> </span>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script src="../js/login.js"></script>
-</body>
+  </body>
 </html>
