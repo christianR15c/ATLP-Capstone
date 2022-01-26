@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/admin.css" />
     <title>admin page</title>
-</head>
-<body onload="readArticle(); readQuery();">
+  </head>
+  <body onload="readArticle(); readQuery();">
     <div class="container">
-        <div class="navbar">
-            <p><span id="span">chris</span>Code<span id="span">/></span></p>
-            <ul>
-                <li><a href="../html/index.html">Home</a></li>
-                <li><a href="../html/article.html" id="article-page">Articles</a></li>
-                <li><a href="../html/contact.html">Contact Us</a></li>
-                <li><a href="#">Services</a></li>
-                <img src="../images/Passport Photo.jpg" alt="">
-            </ul>
-        </div>
-        <a href="#" id="toggle-btn">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-        <div class="content">
-            <div class="article" id="article-form">
-                <form id="create-article-form">
-                    <h3>Add Article</h3>
-                    <input type="text" placeholder="Ttle" class="title" id="title">
-                    <p class="title-input hidden">please enter the title</p>
-                    <input type="text" placeholder="content" class="body" id="article">
-                    <p class="article-input hidden">please enter the article content</p>
-                    <div class="image-div"><img src="../images/choose image.png" alt="" id="photo"></div>
-                    <input type="file" id="file">
-                    <label id="imageName"></label>
-                    <label id="uploadBtn">uplaod image</label>
-                    <label id="UpProgress"></label>
-                    <button type="submit">Add Article</button>
-                </form>
-                <div class="article-section" id="article-section">
-                </div>
-                <!-- </div>   -->
+      <div class="navbar">
+        <p><span id="span">chris</span>Code<span id="span">/></span></p>
+        <ul>
+          <li><a href="../html/index.html">Home</a></li>
+          <li><a href="../html/article.html" id="article-page">Articles</a></li>
+          <li><a href="../html/contact.html">Contact Us</a></li>
+          <li><a href="#">Services</a></li>
+          <img src="../images/Passport Photo.jpg" alt="" />
+        </ul>
+      </div>
+      <a href="#" id="toggle-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="content">
+        <div class="article" id="article-form">
+          <form id="create-article-form">
+            <h3>Add Article</h3>
+            <input type="text" placeholder="Ttle" class="title" id="title" />
+            <p class="title-input hidden">please enter the title</p>
+            <input
+              type="text"
+              placeholder="content"
+              class="body"
+              id="article"
+            />
+            <p class="article-input hidden">please enter the article content</p>
+            <div class="image-div">
+              <img src="../images/choose image.png" alt="" id="photo" />
             </div>
-            <div class="queries" id="queries">
-
-            </div>
+            <input type="file" id="file" />
+            <label id="imageName"></label>
+            <label id="uploadBtn">uplaod image</label>
+            <label id="UpProgress"></label>
+            <button type="submit">Add Article</button>
+          </form>
+          <div class="article-section" id="article-section"></div>
+          <!-- </div>   -->
         </div>
+        <div class="queries" id="queries"></div>
+      </div>
     </div>
 
-    <div class="modal-bg" id="modal-bg">
-        
-    </div>
+    <div class="modal-bg" id="modal-bg"></div>
 
     <div class="modal-bg1" id="modal-bg1">
-        <div class="modal">
-            <h2 id="delete-article-header">Delete Article</h2>
-            <p>are you sure you want to delete this article?</p>
-            <div class="button">
-                <button id="delete1">delete</button>
-                <button id="cancel1">Cancel</button>
-            </div>
+      <div class="modal">
+        <h2 id="delete-article-header">Delete Article</h2>
+        <p>are you sure you want to delete this article?</p>
+        <div class="button">
+          <button id="delete1">delete</button>
+          <button id="cancel1">Cancel</button>
         </div>
+      </div>
     </div>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="../js/firebase.js"></script>
     <script src="../js/admin.js"></script>
-</body>
+  </body>
 </html>
