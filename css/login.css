@@ -1,202 +1,203 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-body{
-    line-height: 1.6;
-    width: 100%;
-    height: 100vh;
+body {
+  line-height: 1.6;
+  width: 100%;
+  height: 100vh;
 }
-.login-page{
-    height: 100%;
-    display: grid;
-    grid-template-columns: 40% 60%;
+.login-page {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
 }
-.login-page .login-text{
-    background-color: #002C5C;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    color: white;
+.login-page .login-text {
+  background-color: #002c5c;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  color: white;
 }
-.login-page .login-text img{
-    width: 80%;
+.login-page .login-text img {
+  width: 80%;
 }
-.login-page .login-text .image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-page .login-text .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.login-page .login-text .paragraph{
-    text-align: center;
-    font-size: 30px;
+.login-page .login-text .paragraph {
+  text-align: center;
+  font-size: 30px;
 }
-.login-page .login-form{
-    display: grid;
-    grid-template-rows: 8% 92%;
-    height: 100%;
+.login-page .login-form {
+  display: grid;
+  grid-template-rows: 8% 92%;
+  height: 100%;
 }
-.login-page .login-form .nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-page .login-form .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.nav a{
-    text-decoration: none;
-    color: #002C5C;
+.nav a {
+  text-decoration: none;
+  color: #002c5c;
+  transition: 0.5s ease-in;
 }
-.form a{
-    text-decoration: none;
-    color: #34C5CE;
+.form a {
+  text-decoration: none;
+  color: #34c5ce;
 }
-.nav a:hover{
-    color: #EF7B10;
-    font-size: 20px;
+.nav a:hover {
+  color: #ef7b10;
+  font-size: 20px;
 }
-.login-page .login-form .nav ul{
-    display: flex;
-} 
-.login-page .login-form .nav ul li{
-    display: flex;
-    padding: 0 20px;
-    color: #002C5C;
+.login-page .login-form .nav ul {
+  display: flex;
 }
-.form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    height: 100%;
+.login-page .login-form .nav ul li {
+  display: flex;
+  padding: 0 20px;
+  color: #002c5c;
 }
-.form form{
-    height: 60%;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100%;
 }
-.form form h1{
-    padding-bottom: 20px;
-    color: #002C5C;
+.form form {
+  height: 60%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.form form input{
-    margin-top: 16px;
-    width: 100%;
-    height: 9%;
-    border: 2px;
-    border-style: solid;
-    border-color: #002C5C;
-    border-radius: 15px;
-    padding: 0 10px;
+.form form h1 {
+  padding-bottom: 20px;
+  color: #002c5c;
 }
-.form form .button{
-    background: #002c5c;
-    color: #fff;
+.form form input {
+  margin-top: 16px;
+  width: 100%;
+  height: 9%;
+  border: 2px;
+  border-style: solid;
+  border-color: #002c5c;
+  border-radius: 15px;
+  padding: 0 10px;
 }
-.form form p{
-    font-size: 25px;
-    width: 100%;
-    text-align: center;
-    padding-top: 20px;
-    color: #002C5C;
+.form form .button {
+  background: #002c5c;
+  color: #fff;
 }
-.email{
-    color: red;
+.form form p {
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  color: #002c5c;
 }
-.password{
-    color: red;
+.email {
+  color: red;
 }
-.hidden{
-    display: none;
+.password {
+  color: red;
 }
-.form form p span{
-    color: #34C5CE;
+.hidden {
+  display: none;
 }
-#toggle-btn{
-    position: absolute;
-    top: 3.4rem;
-    right: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 26px;
+.form form p span {
+  color: #34c5ce;
 }
-#toggle-btn .bar{
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
+#toggle-btn {
+  position: absolute;
+  top: 3.4rem;
+  right: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 26px;
+}
+#toggle-btn .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
 }
 
 @media (max-width: 974px) {
-    .login-page .login-text .paragraph{
-        font-size: 25px;
-    }
-    .form form p{
-        font-size: 20px;
-    }
-    .form form input{
-        width: 120%;
-    }
+  .login-page .login-text .paragraph {
+    font-size: 25px;
+  }
+  .form form p {
+    font-size: 20px;
+  }
+  .form form input {
+    width: 120%;
+  }
 }
 @media (max-width: 650px) {
-    .login-page{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .login-page .login-text{
-        height: 30%;
-        display: grid;
-        grid-template-columns: 30% 25% 25%;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .login-page .login-form{
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-    }
-    .login-page .login-form .nav{
-        /* background-color: #002C5C; */
-    }
-    .login-page .login-form .nav ul{
-        height: fit-content;
-        flex-direction: column;
-        background-color: #002C5C;
-        width: 100%;
-        margin-top: 0;
-        align-items: center;
-        display: none;
-    }
-    .login-page .login-form .nav li a{
-        color: white;
-        padding-bottom: 10px;
-    }
-    .form form input{
-        width: 120%;
-        height: 7%;
-    }
-    .form form{
-        height: 100%;
-    }
-    .login-page .login-text img{
-        width: 60%;
-    }
-    .login-page .login-text .paragraph{
-        font-size: 18px;
-    }
+  .login-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .login-page .login-text {
+    height: 30%;
+    display: grid;
+    grid-template-columns: 30% 25% 25%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .login-page .login-form {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .login-page .login-form .nav {
+    /* background-color: #002C5C; */
+  }
+  .login-page .login-form .nav ul {
+    height: fit-content;
+    flex-direction: column;
+    background-color: #002c5c;
+    width: 100%;
+    margin-top: 0;
+    align-items: center;
+    display: none;
+  }
+  .login-page .login-form .nav li a {
+    color: white;
+    padding-bottom: 10px;
+  }
+  .form form input {
+    width: 120%;
+    height: 7%;
+  }
+  .form form {
+    height: 100%;
+  }
+  .login-page .login-text img {
+    width: 60%;
+  }
+  .login-page .login-text .paragraph {
+    font-size: 18px;
+  }
 }
 @media (max-width: 470px) {
-    .form form input{
-        width: 160%;
-    }
+  .form form input {
+    width: 160%;
+  }
 }
 @media (max-width: 360px) {
-    .login-page .login-text .paragraph{
-        font-size: 15px;
-    }
+  .login-page .login-text .paragraph {
+    font-size: 15px;
+  }
 }

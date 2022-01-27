@@ -27,6 +27,7 @@ body {
   text-decoration: none;
   list-style: none;
   color: #002c5c;
+  transition: 0.5s ease-in;
 }
 .navbar a:hover {
   color: #ef7b10;
@@ -42,18 +43,18 @@ body {
   font-size: 40px;
   color: #34c5ce;
 }
-.navbar ul {
+.nav-links {
   display: flex;
   align-items: center;
 }
-.navbar ul li {
+.nav-links li {
   display: flex;
   padding: 0 20px;
 }
 .article {
   display: grid;
   width: 100%;
-  grid-template-rows: repeat(9, 30%);
+  /* grid-template-rows: repeat(9, 30%); */
   padding: 10px 60px;
 }
 .article .article-1 {
@@ -80,14 +81,16 @@ body {
   width: 60%;
 }
 .article-1 .content .like-comment img {
-  height: 40px;
+  height: 25px;
 }
 .article-1 .content p {
   padding-top: 8px;
+  color: black;
 }
 hr {
   color: #002c5c;
   font-size: 10px;
+  margin-top: 10px;
 }
 .content a {
   text-decoration: none;
@@ -96,9 +99,11 @@ hr {
 }
 .content h1 {
   color: #002c5c;
-  font-size: 32px;
+  font-size: 25px;
+  padding-top: 5px;
 }
-#toggle-btn {
+#toggle-btn,
+.closing-image {
   position: absolute;
   top: 1.4rem;
   right: 60px;
@@ -107,7 +112,9 @@ hr {
   justify-content: space-between;
   width: 30px;
   height: 26px;
+  cursor: pointer;
 }
+
 #toggle-btn .bar {
   height: 3px;
   width: 100%;
@@ -142,8 +149,22 @@ hr {
   .navbar p {
     font-size: 30px;
   }
-  .navbar ul {
+  .nav-links {
     display: none;
+    background-color: rgba(0, 0, 0, 0.56);
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    transition: 0.5s ease-in;
+  }
+  .closing-image {
+    display: none;
+  }
+  .nav-links a {
+    padding-top: 30px;
+    color: #ffff;
   }
   #toggle-btn {
     display: flex;
@@ -165,4 +186,10 @@ hr {
   .article {
     padding: 0 60px;
   }
+}
+.nav-active {
+  display: flex;
+}
+#hideToggle {
+  display: none;
 }

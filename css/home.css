@@ -244,6 +244,9 @@ body {
   .navbar-content .nav p {
     font-size: 30px;
   }
+  .navbar-content {
+    height: 100%;
+  }
   .navbar-content .showcase .showcase-text h1 {
     font-size: 30px;
   }

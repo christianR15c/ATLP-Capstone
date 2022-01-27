@@ -22,6 +22,7 @@ body {
 .nav a {
   text-decoration: none;
   color: #002c5c;
+  transition: 0.5s ease-in;
 }
 .nav a:hover {
   color: #ef7b10;

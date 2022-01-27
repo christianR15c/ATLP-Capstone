@@ -1,264 +1,269 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-body{
-    width: 100%;
-    background-color: #E6EBEE;
-    /* height: 100vh; */
+body {
+  width: 100%;
+  background-color: #e6ebee;
+  /* height: 100vh; */
 }
-.container{
-    height: 100%;
-    width: 100%;
+.container {
+  height: 100%;
+  width: 100%;
 }
-.navbar{
-    width: 100%;
-    height: 75px;
-    display: flex;
-    background-color: #002C5C;
-    justify-content: space-between;
-    padding:0 60px;
+.navbar {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  background-color: #002c5c;
+  justify-content: space-between;
+  padding: 0 60px;
 }
-.navbar #span{
-    color: #EF7B10;
+.navbar #span {
+  color: #ef7b10;
 }
-.navbar a{
-    text-decoration: none;
-    list-style: none;
-    color: #fff;
+.navbar a {
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+  transition: 0.5s ease-in;
 }
-.navbar a:hover{
-    color: #EF7B10;
-    font-size: 20px;
+.navbar a:hover {
+  color: #ef7b10;
+  font-size: 20px;
 }
-.navbar p{
-    display: flex;
-    align-items: center;
-    font-size: 40px;
-    color: #34C5CE;
+.navbar p {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  color: #34c5ce;
 }
-.navbar ul{
-    display: flex;
-    align-items: center;
+.navbar ul {
+  display: flex;
+  align-items: center;
 }
-.navbar ul li{
-    display: flex;
-    padding: 0 20px;
+.navbar ul li {
+  display: flex;
+  padding: 0 20px;
 }
-.navbar img{
-    height: 35px;
-    width: 30px;
-    border-radius: 50%;
+.navbar img {
+  height: 35px;
+  width: 30px;
+  border-radius: 50%;
 }
-.content{
-    display: grid;
-    grid-template-columns: 59% 39%;
-    gap: 2%;
+.content {
+  display: grid;
+  grid-template-columns: 59% 39%;
+  gap: 2%;
 }
-.article{
-    display: flex;
-    flex-direction: column;
-    padding: 0 60px;
+.article {
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
 }
-.article form{
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
+.article form {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
 }
-.article form h3{
-    color: #002C5C;
-    font-size: 25px;
+.article form h3 {
+  color: #002c5c;
+  font-size: 25px;
 }
-.article form input{
-    width: 70%;
-    margin: 5px 0;
-    border: solid 1.5px #002C5C;
-    border-radius: 5px;
-    padding-left: 10px;
+.article form input {
+  width: 70%;
+  margin: 5px 0;
+  border: solid 1.5px #002c5c;
+  border-radius: 5px;
+  padding-left: 10px;
 }
-.article .title{
-    height: 30px;
+.article .title {
+  height: 30px;
 }
-.article .body{
-    height: 90px;
-    width: 90%;
+.article .body {
+  height: 90px;
+  width: 90%;
 }
-.article-section{
-    display: flex;
-    flex-direction: column;
+.article-section {
+  display: flex;
+  flex-direction: column;
 }
-.article form button{
-    background-color: #002C5C;
-    height: 30px;
-    width: 30%;
-    /* margin-left: 70%; */
-    color: #fff;
-    border-radius: 10px;
+.article form button {
+  background-color: #002c5c;
+  height: 30px;
+  width: 30%;
+  /* margin-left: 70%; */
+  color: #fff;
+  border-radius: 10px;
 }
-#article-selectio-first-div{
-    display: grid;
-    grid-template-columns: 20% 80%;
+#article-selectio-first-div {
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
-.article-section .picture{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.article-section .picture {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.image-div{
-    position: relative;
+.image-div {
+  position: relative;
 }
-#create-article-form img{
-    height: 100px;
+#create-article-form img {
+  height: 100px;
 }
-#file{
-    width: 30%;
+#file {
+  width: 30%;
 }
-#uploadBtn{
-    margin: 10px 0;
+#uploadBtn {
+  margin: 10px 0;
 }
-.article-section .picture img{
-    width: 80%;
+.article-section .picture img {
+  width: 80%;
 }
-.article-section .content{
-    display: flex;
-    flex-direction: column;
+.article-section .content {
+  display: flex;
+  flex-direction: column;
 }
-.article .content h1{
-    font-size: 20px;
+.article .content h1 {
+  font-size: 20px;
 }
-.article .content p{
-    padding-top: 10px;
-    font-size: 15px;
+.article .content p {
+  padding-top: 10px;
+  font-size: 15px;
 }
-.article .like-comment{
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
+.article .like-comment {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
 }
-.article .like-comment img{
-    height: 23px;
-    cursor: pointer;
+.article .like-comment img {
+  height: 23px;
+  cursor: pointer;
 }
-#update{
-    background-color: green;
+#update {
+  background-color: green;
 }
-#cancel, #cancel1{
-    background-color: rgb(97, 97, 0);
+#cancel,
+#cancel1 {
+  background-color: rgb(97, 97, 0);
 }
-#delete1{
-    background-color: red;
+#delete1 {
+  background-color: red;
 }
-.article .like-comment p{
-    padding-right: 20px;
+.article .like-comment p {
+  padding-right: 20px;
 }
-.article .like-comment .edit,.delete{
-    color: #EF7B10;
-    cursor: pointer;
+.article .like-comment .edit,
+.delete {
+  color: #ef7b10;
+  cursor: pointer;
 }
-a{
-    text-decoration: none;
-    color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-hr{
-    /* padding: 10px 0; */
-    margin: 22px 0;
+hr {
+  /* padding: 10px 0; */
+  margin: 22px 0;
 }
-.queries{
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
+.queries {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
 }
-.queries p{
-    padding: 5px 0;
-    font-size: 20px;
+.queries p {
+  padding: 5px 0;
+  font-size: 20px;
 }
-.queries #email{
-    color: #34acb4;
-}
-
-.modal-bg{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s opacity 0,5s;
-}
-.modal{
-    background-color: white;
-    width: 40%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 30px;
-}
-.modal h2, label{
-    color: #002C5C;
-}
-.modal .button{
-    display: flex;
-    cursor: pointer;
-}
-.modal button{
-    background-color: #002C5C;
-    height: 25px;
-    width: 70px;
-    color: #fff;
-    border-radius: 10px;
-    margin-right: 10px;
-}
-.modal input{
-    height: 50px;
-    width: 75%;
-    border-radius: 5px;
-    border: solid #002C5C 1.5px;
-}
-.bg-active{
-    visibility: visible;
-    opacity: 1;
+.queries #email {
+  color: #34acb4;
 }
 
-.modal-bg1{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s opacity 0,5s;
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s opacity 0, 5s;
+}
+.modal {
+  background-color: white;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+}
+.modal h2,
+label {
+  color: #002c5c;
+}
+.modal .button {
+  display: flex;
+  cursor: pointer;
+}
+.modal button {
+  background-color: #002c5c;
+  height: 25px;
+  width: 70px;
+  color: #fff;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.modal input {
+  height: 50px;
+  width: 75%;
+  border-radius: 5px;
+  border: solid #002c5c 1.5px;
+}
+.bg-active {
+  visibility: visible;
+  opacity: 1;
 }
 
-.bg-active1{
-    visibility: visible;
-    opacity: 1;
+.modal-bg1 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s opacity 0, 5s;
 }
-#delete{
-    font-size: 15px;
+
+.bg-active1 {
+  visibility: visible;
+  opacity: 1;
 }
-.title-input, .article-input{
-    color: red;
+#delete {
+  font-size: 15px;
 }
-.hidden{
-    display: none;
+.title-input,
+.article-input {
+  color: red;
 }
-#delete-article-header{
-    color: red;
+.hidden {
+  display: none;
+}
+#delete-article-header {
+  color: red;
 }
