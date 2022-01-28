@@ -131,6 +131,16 @@ body {
   background-color: white;
   border-radius: 10px;
 }
+.loader {
+  display: none;
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #34c5ce; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  margin-top: 3px;
+}
 
 @media (max-width: 974px) {
   .login-page .login-text .paragraph {
@@ -200,4 +210,8 @@ body {
   .login-page .login-text .paragraph {
     font-size: 15px;
   }
+}
+
+.loader-active {
+  display: flex;
 }

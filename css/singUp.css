@@ -95,6 +95,7 @@ form a {
 .form form .button {
   background: #002c5c;
   color: #fff;
+  cursor: pointer;
 }
 .form form p {
   font-size: 25px;
@@ -105,6 +106,13 @@ form a {
 }
 .form form p span {
   color: #34c5ce;
+}
+.form form .button:hover {
+  background-color: #fff;
+  color: #002c5c;
+  border-style: solid;
+  border-color: #ef7b10;
+  border-radius: 15px;
 }
 .email,
 .password,
@@ -133,7 +141,28 @@ form a {
   background-color: white;
   border-radius: 10px;
 }
+.swal-modal {
+  will-change: unset;
+}
+.loader {
+  display: none;
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #34c5ce; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  margin-top: 3px;
+}
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 974px) {
   .login-page .login-text .paragraph {
     font-size: 25px;
@@ -202,4 +231,7 @@ form a {
   .login-page .login-text .paragraph {
     font-size: 15px;
   }
+}
+.loader-active {
+  display: flex;
 }
