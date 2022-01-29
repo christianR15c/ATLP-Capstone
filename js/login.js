@@ -10,7 +10,7 @@ const validator = () => {
   if (!passswordInput.value) {
     passswordInput.nextElementSibling.classList.remove('hidden');
   } else {
-    loader.classList.remove('loader-active');
+    loader.classList.add('loader-active');
     fetch('https://mybrand-api.herokuapp.com/api/user/login', {
       method: 'POST',
       headers: {
@@ -23,14 +23,18 @@ const validator = () => {
     })
       .then((res) => res.json())
       .then((loggedUser) => {
-        console.log(loggedUser);
-        if (!loggedUser.ok) {
-          swal('Failed!', 'Invalid username or password', 'error');
-          loader.classList.remove('loader-active');
-          resetForm();
+        if (loggedUser.user) {
+          if (loggedUser.user.isAdmin) {
+            localStorage.setItem('adminToken', loggedUser.adminToken);
+            window.location.href = '../html/admin.html';
+          } else {
+            localStorage.setItem('userToken', loggedUser.token);
+            window.location.href = '../html/index.html';
+          }
         } else {
-          console.log(loggedUser);
-          window.location.href = '../html/index.html';
+          swal('Login Failed!', 'Invalid username or password', 'error');
+          resetForm();
+          loader.classList.remove('loader-active');
         }
       })
       .catch((err) => console.log(err));
@@ -38,6 +42,8 @@ const validator = () => {
 };
 
 button.addEventListener('click', (e) => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('tokenAdmin');
   e.preventDefault();
   validator();
   resetForm();

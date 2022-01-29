@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/displayArticle.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/displayArticle.css" />
     <title>Article</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="navbar">
-            <p><span id="span">chris</span>Code<span id="span">/></span></p>
-            <ul>
-                <li><a href="/html/index.html">Home</a></li>
-                <li><a href="/html/article.html" id="article-page">Articles</a></li>
-                <li><a href="/html/contact.html">Contact Us</a></li>
-                <li><a href="#">Services</a></li>
-            </ul>
+      <div class="navbar">
+        <p><span id="span">chris</span>Code<span id="span">/></span></p>
+        <ul>
+          <li><a href="/html/index.html">Home</a></li>
+          <li><a href="/html/article.html" id="article-page">Articles</a></li>
+          <li><a href="/html/contact.html">Contact Us</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </div>
+      <hr />
+      <div class="section">
+        <h1>Coding is the future, Why coding?</h1>
+        <div class="like-comment">
+          <img src="../images/like-icon.png" alt="" />
+          <p>3</p>
+          <img src="../images/comment-icon.png" alt="" />
+          <p>5</p>
         </div>
-        <hr>
-        <div class="section">
-            <h1>Coding is the future, Why coding?</h1>
-            <div class="like-comment">
-                <img src="../images/like-icon.png" alt="">
-                <p>3</p>
-                <img src="../images/comment-icon.png" alt="">
-                <p>5</p>
-            </div>
-            <div class="picture">
-                <img src="../images/comp1.jpg" alt="">
-            </div>
-            <p id="paragraph">Coding is a basic literacy in the digital age, and kids need to understand and work with and understand the technology around them. Having children learn coding at a young age prepares them for the future. Coding helps children with communication, creativity, math, writing, and confidence.
-                <br>
-                There are four types of coding: Data compression (or source coding, Error control (or channel coding
-                ), Cryptographic coding, Line coding.
-            <br>
-            Coding is a basic literacy in the digital age, and kids need to understand and work with and understand the technology around them. Having children learn coding at a young age prepares them for the future. Coding helps children with communication, creativity, math, writing, and confidence.
-            </p>
-            <div class="comment-section">
-                <form action="">
-                    <h4>leave a comment</h4>
-                    <div class="message">
-                        <input type="text" placeholder="Type your comment here">
-                        <button>send</button>
-                    </div>
-                </form>
-            </div>
+        <div class="picture">
+          <img src="../images/comp1.jpg" alt="" />
         </div>
+        <p id="paragraph">
+          Coding is a basic literacy in the digital age, and kids need to
+          understand and work with and understand the technology around them.
+          Having children learn coding at a young age prepares them for the
+          future. Coding helps children with communication, creativity, math,
+          writing, and confidence.
+          <br />
+          There are four types of coding: Data compression (or source coding,
+          Error control (or channel coding ), Cryptographic coding, Line coding.
+          <br />
+          Coding is a basic literacy in the digital age, and kids need to
+          understand and work with and understand the technology around them.
+          Having children learn coding at a young age prepares them for the
+          future. Coding helps children with communication, creativity, math,
+          writing, and confidence.
+        </p>
+        <div class="comment-section">
+          <form action="">
+            <h4>leave a comment</h4>
+            <div class="message">
+              <input
+                type="text"
+                placeholder="Type your comment here"
+                id="text"
+              />
+              <button id="button">send</button>
+            </div>
+          </form>
+        </div>
+        <div class="comments">
+          <h3>name</h3>
+          <p>thank you fo sharing</p>
+        </div>
+      </div>
     </div>
-</body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/displayArticle.js"></script>
+  </body>
 </html>

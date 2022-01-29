@@ -15,3 +15,4 @@ const navSlide = () => {
   });
 };
 navSlide();
+localStorage.removeItem('userToken');

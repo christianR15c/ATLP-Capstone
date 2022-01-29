@@ -24,9 +24,11 @@ fetch(`${getAllArticlesApi}`)
   .then((res) => {
     if (res.ok) {
       res.json().then((jsonResponse) => {
-        let articleData = jsonResponse;
+        console.log(jsonResponse);
+        let articleData = jsonResponse.result;
         if (articleData.length > 0) {
           articleData.forEach((article) => {
+            console.log(article._id);
             document.getElementById('article').innerHTML += `
             <div>
                 <div class="article-1">
@@ -34,8 +36,8 @@ fetch(`${getAllArticlesApi}`)
                         <img src="${article.articleImage}" alt="">
                     </div>
                     <div class="content">
-                        <h1><a href="#"</a>${article.title}</h1>
-                        <p>${article.content}</p>
+                        <h1><a href="javascript:displayArticle('${article._id}'); ">${article.title}</a></h1>
+                        <p onclick="displayArticle('${article._id}')">${article.content}</p>
                         <div class="like-comment">
                             <img src="../images/like-icon.png" alt="">
                             <p>$</p>
@@ -55,3 +57,11 @@ fetch(`${getAllArticlesApi}`)
     }
   })
   .catch((err) => console.log(err));
+
+// get one article
+const displayArticle = (id) => {
+  alert('clicked');
+  fetch(`https://mybrand-api.herokuapp.com/api/articles/${id}`)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+};

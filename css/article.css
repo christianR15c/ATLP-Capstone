@@ -97,6 +97,9 @@ hr {
   list-style: none;
   color: #002c5c;
 }
+.content p {
+  cursor: pointer;
+}
 .content h1 {
   color: #002c5c;
   font-size: 25px;
