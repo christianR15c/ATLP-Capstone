@@ -1,7 +1,7 @@
 const button = document.getElementById('button');
 const text = document.getElementById('text');
 
-const token = localStorage.getItem('userToken');
+const tokenUser = sessionStorage.getItem('userToken');
 
 button.addEventListener('click', (e) => {
   e.preventDefault();
@@ -9,7 +9,7 @@ button.addEventListener('click', (e) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'auth-token': token,
+      'auth-token': tokenUser,
     },
     body: JSON.stringify({
       text: text.value,

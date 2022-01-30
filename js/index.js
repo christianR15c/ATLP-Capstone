@@ -15,4 +15,5 @@ const navSlide = () => {
   });
 };
 navSlide();
-localStorage.removeItem('userToken');
+// localStorage.removeItem('userToken');
+sessionStorage.removeItem('adminToken');

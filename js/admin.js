@@ -2,7 +2,7 @@ const title = document.querySelector('#title');
 const content = document.querySelector('#article');
 const button = document.querySelector('button[type="submit"]');
 
-const tokenAdmin = localStorage.getItem('adminToken');
+const tokenAdmin = sessionStorage.getItem('adminToken');
 if (tokenAdmin == null) {
   Swal.fire({
     title: 'Only admin can access this page.',
@@ -102,10 +102,10 @@ if (!(tokenAdmin == null)) {
                     <img src="../images/like-icon.png" alt="" >
                     <p id="like">like</p>
                     <img src="../images/comment-icon.png" alt="">
-                    <p>7</p>
+                    <p>${article.comments.length}</p>
                     <p>time</p>
                     <p>date</p>
-                    <p class="edit" id="edit" >Edit</p>
+                    <p class="edit" id="edit" onclick="openModal('${article.title}','${article.content}','${article._id}');">Edit</p>
                     <p class="delete" id="delete" onclick="deleteArticle('${article._id}');">delete</p>
                 </div>
             </div>
@@ -119,6 +119,35 @@ if (!(tokenAdmin == null)) {
   });
 
   // create a new article
+
+  //upload image
+  let uploadedFileUrl;
+  const CLOUDINARY_URL =
+    'CLOUDINARY_URL=cloudinary://455193126486473:z5h9FCLTPDJZV00XIvCFu6ZEQ1c@christian-habineza/image/upload';
+  const CLOUDINARY_UPLOAD_PRESET = 'mybrand-website-images';
+  const image = document.querySelector('#file');
+  image.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+    fetch(
+      'CLOUDINARY_URL=cloudinary://455193126486473:z5h9FCLTPDJZV00XIvCFu6ZEQ1c@christian-habineza/image/upload',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.secure_url !== '') {
+          uploadedFileUrl = data.secure_url;
+        }
+      })
+      .catch((err) => console.error(err));
+  });
+
   button.addEventListener('click', (e) => {
     e.preventDefault();
     fetch('https://mybrand-api.herokuapp.com/api/articles', {
@@ -130,7 +159,7 @@ if (!(tokenAdmin == null)) {
       body: JSON.stringify({
         title: title.value,
         content: content.value,
-        articleImage: 'hekkjkshka',
+        articleImage: uploadedFileUrl,
       }),
     })
       .then((newArticle) => newArticle.json())
@@ -151,3 +180,51 @@ if (!(tokenAdmin == null)) {
       .catch((err) => console.log(err));
   });
 }
+
+// ------------- edit model ----------------
+const openModal = (title, articleContent, id) => {
+  document.getElementById('modal-bg').classList.add('bg-active');
+  document.getElementById('modal-bg').innerHTML = `
+        <form class="modal">
+            <h2>Edit your Article</h2>
+            <label for="name" >Title</label>
+            <input type="text" name="title" value="${title}" id="title">
+            <label for="name" id="labe">Article</label>
+            <input type="text" name="message" value="${articleContent}" id="article">
+            <div class="button">
+                <button type="submit" id="update">update</button>
+                <button id="cancel">Cancel</button>
+            </div>
+        </div>
+    `;
+  document.getElementById('update').addEventListener('click', (e) => {
+    e.preventDefault();
+    let newTitle = document.querySelector('input[name="title"]').value;
+    let newArticle = document.querySelector('input[name="message"]').value;
+
+    // fetch update apis
+    fetch(`https://mybrand-api.herokuapp.com/api/articles/update/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+        'auth-token': tokenAdmin,
+      },
+      body: JSON.stringify({
+        title: newTitle,
+        content: newArticle,
+      }),
+    })
+      .then((res) => res.json())
+      .then((updatedArticle) => {
+        console.log(updatedArticle);
+        swal(
+          'Updated!',
+          `${updatedArticle.article.title} Article has been updated successfully`,
+          'success'
+        );
+        document.getElementById('modal-bg').classList.remove('bg-active');
+      })
+      .catch((err) => console.log(err));
+  });
+};
+// sessionStorage.removeItem('tokenAdmin');

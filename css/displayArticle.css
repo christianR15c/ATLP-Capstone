@@ -57,51 +57,51 @@ body {
   display: flex;
   padding: 0 20px;
 }
-.section {
+.display-section {
   padding-left: 60px;
   width: 100%;
 }
-.section h1 {
+.display-section h1 {
   font-size: 20px;
 }
-.section .like-comment {
+.display-section .like-comment {
   display: flex;
   align-items: center;
   padding-top: 10px;
 }
-.section .like-comment img {
+.display-section .like-comment img {
   height: 42px;
   width: 42px;
 }
-.asection .like-comment h1 {
+.display-section .like-comment h1 {
   padding-right: 10px;
 }
-.section .like-comment p {
+.display-section .like-comment p {
   padding-right: 20px;
 }
-.section #paragraph {
+.display-section #paragraph {
   font-size: 18px;
   padding: 20px 0;
 }
-.section .picture {
+.display-section .picture {
   display: flex;
   justify-content: center;
 }
-.section .picture img {
+.display-section .picture img {
   height: 320px;
   width: 620px;
 }
-.section .message {
+.display-section .message {
   display: flex;
   flex-direction: column;
   padding-bottom: 80px;
   width: 60%;
 }
-.section .message input {
+.display-section .message input {
   height: 100px;
   border: none;
 }
-.section .message button {
+.display-section .message button {
   width: 20%;
   height: 30px;
   background-color: #002c5c;

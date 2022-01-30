@@ -25,25 +25,23 @@ const validator = () => {
       .then((loggedUser) => {
         if (loggedUser.user) {
           if (loggedUser.user.isAdmin) {
-            localStorage.setItem('adminToken', loggedUser.adminToken);
+            sessionStorage.setItem('adminToken', loggedUser.adminToken);
             window.location.href = '../html/admin.html';
           } else {
-            localStorage.setItem('userToken', loggedUser.token);
+            sessionStorage.setItem('userToken', loggedUser.token);
             window.location.href = '../html/index.html';
           }
         } else {
           swal('Login Failed!', 'Invalid username or password', 'error');
           resetForm();
-          loader.classList.remove('loader-active');
         }
+        loader.classList.remove('loader-active');
       })
       .catch((err) => console.log(err));
   }
 };
 
 button.addEventListener('click', (e) => {
-  localStorage.removeItem('token');
-  localStorage.removeItem('tokenAdmin');
   e.preventDefault();
   validator();
   resetForm();

@@ -92,13 +92,31 @@ hr {
   font-size: 10px;
   margin-top: 10px;
 }
+#comment-field {
+  padding-top: 10px;
+}
+#comment-field button {
+  width: 50px;
+  background-color: #002c5c;
+  border-radius: 5px;
+  color: white;
+}
+#comment-input:focus {
+  height: 50px;
+}
+#comments {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
 .content a {
   text-decoration: none;
   list-style: none;
   color: #002c5c;
 }
-.content p {
+.content #p {
   cursor: pointer;
+  color: black;
 }
 .content h1 {
   color: #002c5c;
