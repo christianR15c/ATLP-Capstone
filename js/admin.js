@@ -136,7 +136,11 @@ if (!(tokenAdmin == null)) {
       .then((newArticle) => newArticle.json())
       .then((message) => {
         if (message === 'Invalid Token') {
-          swal('Failed!', 'only admin can create an article', 'error');
+          swal(
+            'Failed!',
+            'you are not admin, only admin can create an article',
+            'error'
+          );
         }
         if (message.status === 'saved successfuly') {
           (title.value = ''), (content.value = '');
